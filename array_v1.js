@@ -26,4 +26,20 @@ class DynamicArray {
     return lastItem;
   }
 
+  insert(index, item) {
+    if (index > this.length - 1 || index < 0) {
+      return undefined;
+    }
+
+    this.length++;
+
+    for (let i = this.length - 1; i >= index; --i) {
+      this.data[i] = this.data[i - 1];
+    }
+
+    this.data[index] = item;
+    return this.data;
+  }
+
+  
 }
