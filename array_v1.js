@@ -41,5 +41,24 @@ class DynamicArray {
     return this.data;
   }
 
-  
+  remove(index) {
+    if (this.length === 0) {
+      return undefined;
+    }
+
+    if (index > this.length - 1 || index < 0) {
+      return undefined;
+    }
+
+    const removedItem = this.data[index];
+
+    for (let i = index; i < this.length - 1; ++i) {
+      this.data[i] = this.data[i + 1];
+    }
+
+    delete this.data[this.length - 1];
+    this.length--;
+
+    return removedItem;
+  }
 }
