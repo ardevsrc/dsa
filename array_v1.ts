@@ -14,5 +14,12 @@ class DynamicArray {
   get(index: number): any {
     return this.data[index];
   }
+
+  push(value: any): number {
+    this.data[this.length] = value;
+    this.length++;
+    return this.length;
+  }
+
   
 }
