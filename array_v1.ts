@@ -33,6 +33,20 @@ class DynamicArray {
     return removedItem;
   }
 
-  
+  insert(index: number, value: any): HashTable {
+    if (index > this.length - 1 || index < 0) {
+      return undefined;
+    }
+
+    this.length++;
+
+    for (let i = this.length - 1; i < index; --i) {
+      this.data[i] = this.data[i - 1];
+    }
+
+    this.data[index] = value;
+    return this.data;
+  }
+
 
 }
