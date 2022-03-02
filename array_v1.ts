@@ -21,5 +21,18 @@ class DynamicArray {
     return this.length;
   }
 
+  pop(): any {
+    if (this.length === 0) {
+      return undefined;
+    }
+
+    const removedItem = this.data[this.length - 1];
+    delete this.data[this.length - 1];
+    this.length--;
+
+    return removedItem;
+  }
+
   
+
 }
