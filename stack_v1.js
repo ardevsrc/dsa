@@ -10,5 +10,11 @@ class Stack {
     return this.#list.size;
   }
 
+  push(item) {
+    if (!this.#maxSize || this.size < this.#maxSize) {
+      this.#list.set(this.size, item);
+    }
+    return this.size;
+  }
   
 }
