@@ -30,5 +30,9 @@ class Stack {
     return this.#list.get(this.size - 1) || null;
   }
 
+  clear() {
+    this.#list = new Map();
+  }
+
   
 }
