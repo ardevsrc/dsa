@@ -5,5 +5,10 @@ class Stack {
   constructor(maxSize) {
     this.#maxSize = Number(maxSize) || null;
   }
+
+  get size() {
+    return this.#list.size;
+  }
+
   
 }
