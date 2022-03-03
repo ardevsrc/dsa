@@ -34,5 +34,7 @@ class Stack {
     this.#list = new Map();
   }
 
-  
+  print() {
+    console.log(Array.from(this.#list.values()));
+  }
 }
