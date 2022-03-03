@@ -26,4 +26,9 @@ class Stack {
     return null;
   }
 
+  peek() {
+    return this.#list.get(this.size - 1) || null;
+  }
+
+  
 }
