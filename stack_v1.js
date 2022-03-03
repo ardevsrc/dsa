@@ -16,5 +16,14 @@ class Stack {
     }
     return this.size;
   }
-  
+
+  pop() {
+    if (this.size) {
+      const lastItem = this.#list.get(this.size - 1);
+      this.#list.delete(this.size - 1);
+      return lastItem;
+    }
+    return null;
+  }
+
 }
