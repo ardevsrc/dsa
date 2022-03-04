@@ -13,5 +13,9 @@ class Queue {
   get isFull() {
     return this.#capacity !== null && this.size === this.#capacity;
   }
+  
+  get isEmpty() {
+    return this.size === 0;
+  }
 
 }
