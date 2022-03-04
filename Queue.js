@@ -10,5 +10,8 @@ class Queue {
     return this.#list.length;
   }
 
-  
+  get isFull() {
+    return this.#capacity !== null && this.size === this.#capacity;
+  }
+
 }
