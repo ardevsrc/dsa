@@ -13,9 +13,28 @@ class Queue {
   get isFull() {
     return this.#capacity !== null && this.size === this.#capacity;
   }
-  
+
   get isEmpty() {
     return this.size === 0;
   }
+
+  enqueue(item, priority = 0) {
+    priority = Math.max(Number(priority), 0);
+    const element = {item, priority};
+
+    if (this.isEmpty || this.#list[this.size - 1].priority) {
+      this.#list.push(element);
+    }
+    else {
+      for (let index in this.#list) {
+        if (element.priority > this.#list[index].priority) {
+          this.#list.splice(index, 0, element);
+          break;
+        }
+      }
+    }
+    return this.size;
+  }
+
 
 }
