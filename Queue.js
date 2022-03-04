@@ -36,5 +36,12 @@ class Queue {
     return this.size;
   }
 
+  dequeue() {
+    return this.isEmpty ? null : this.#list.shift().item;
+  }
 
+  toString() {
+    return this.#list.map((el) => el.item).toString();
+  }
+  
 }
