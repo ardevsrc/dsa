@@ -12,5 +12,8 @@ class Queue {
     this.last = null;
   }
 
+  peek() {
+    return this.first;
+  }
   
 }
