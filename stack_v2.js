@@ -4,3 +4,10 @@ class Node {
     this.previous = null;
   }
 }
+
+class Stack {
+  constructor() {
+    this.last = null;
+  }
+
+}
