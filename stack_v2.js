@@ -10,4 +10,9 @@ class Stack {
     this.last = null;
   }
 
+  peek() {
+    return this.last;
+  }
+
+  
 }
