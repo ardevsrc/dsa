@@ -23,5 +23,14 @@ class Stack {
     return this.last;
   }
 
-  
+  pop() {
+    const removedItem = this.last;
+
+    if (removedItem) {
+      this.last = removedItem.previous;
+    }
+
+    return removedItem;
+  }
+
 }
