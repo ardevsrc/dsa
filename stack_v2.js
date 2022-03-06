@@ -14,5 +14,14 @@ class Stack {
     return this.last;
   }
 
+  push(item) {
+    const previousLastItem = this.last;
+
+    this.last = new Node(item);
+    this.last.previous = previousLastItem;
+
+    return this.last;
+  }
+
   
 }
