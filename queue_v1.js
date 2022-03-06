@@ -28,8 +28,24 @@ class Queue {
       this.last.previous = newLastNode;
       this.last = newLastNode;
     }
+
     return newLastNode;
   }
 
-  
+  dequeue() {
+    const removedItem = this.first;
+
+    if (!removedItem) {
+      return null;
+    }
+
+    if (this.first === this.last) {
+      this.last = null;
+    }
+
+    this.first = removedItem.previous;
+
+    return removedItem;
+  }
+
 }
