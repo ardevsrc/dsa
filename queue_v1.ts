@@ -36,4 +36,19 @@ class Queue {
 
     return newLastNode;
   }
+  
+  dequeue(): Node | null {
+    const removedItem = this.first;
+
+    if (!removedItem) {
+      return null;
+    }
+
+    if (this.first === this.last) {
+      this.last = null;
+    }
+
+    this.first = removedItem.prev;
+    return removedItem;
+  }
 }
