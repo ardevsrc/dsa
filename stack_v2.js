@@ -1,36 +1,40 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.previous = null;
-  }
-}
-
 class Stack {
-  constructor() {
-    this.last = null;
+  #list = new Map();
+  #maxSize = null;
+
+  constructor(maxSize) {
+    this.#maxSize = Number(maxSize) || null;
   }
 
-  peek() {
-    return this.last;
+  get size() {
+    return this.#list.size;
   }
 
   push(item) {
-    const previousLastItem = this.last;
-
-    this.last = new Node(item);
-    this.last.previous = previousLastItem;
-
-    return this.last;
+    if (!this.#maxSize || this.size < this.#maxSize) {
+      this.#list.set(this.size, item);
+    }
+    return this.size;
   }
 
   pop() {
-    const removedItem = this.last;
-
-    if (removedItem) {
-      this.last = removedItem.previous;
+    if (this.size) {
+      const lastItem = this.#list.get(this.size - 1);
+      this.#list.delete(this.size - 1);
+      return lastItem;
     }
-
-    return removedItem;
+    return null;
   }
 
+  peek() {
+    return this.#list.get(this.size - 1) || null;
+  }
+
+  clear() {
+    this.#list = new Map();
+  }
+
+  print() {
+    console.log(Array.from(this.#list.values()));
+  }
 }
