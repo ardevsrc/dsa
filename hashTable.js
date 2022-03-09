@@ -44,5 +44,11 @@ class HashTable {
 
   }
 
+  remove(key) {
+    const value = this.get(key);
+    this.insert(key, undefined);
+
+    return value;
+  }
 
 }
