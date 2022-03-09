@@ -20,5 +20,29 @@ class HashTable {
     return undefined;
   }
 
-  
+  insert(key, value) {
+    const index = this.hash(key);
+
+    if (!this.table[index]) {
+      this.table[index] = [];
+    }
+
+    const currentValue = this.get(key);
+
+    if (typeof currentValue !== 'undefined') {
+      const bucket = this.table[index];
+
+      for (let i = 0; i < bucket.length; ++i) {
+        if (bucket[i].key === key) {
+          bucket[i].value = value;
+        }
+      }
+    }
+    else {
+      this.table[index].push({key, value});
+    }
+
+  }
+
+
 }
